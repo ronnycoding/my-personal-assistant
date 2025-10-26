@@ -133,9 +133,7 @@ Track progress on the [Epic Issue](https://github.com/ronnycoding/my-personal-ag
 
 **Completed:**
 - ✅ Skills API framework and documentation (#3)
-
-**In Progress:**
-- 🔄 AppleScript testing framework (#4)
+- ✅ AppleScript testing & validation framework (#4)
 
 **Upcoming:**
 - ⏳ Apple Mail skills (#5-#7)
@@ -149,6 +147,7 @@ Track progress on the [Epic Issue](https://github.com/ronnycoding/my-personal-ag
 
 - [Permissions Setup Guide](docs/PERMISSIONS.md) - Detailed macOS permission configuration
 - [Skills API Guide](docs/SKILLS_API.md) - Creating and using AppleScript skills
+- [Testing Framework](tests/README.md) - AppleScript testing, assertions, and test data
 - [Agent Definition](.claude/agents/productivity-agent.md) - Productivity agent overview
 - [Skills Directory](.claude/skills/README.md) - Skills organization and best practices
 
