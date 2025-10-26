@@ -54,19 +54,37 @@ Skills are organized by macOS application domain:
 
 ## Quick Start
 
+### 1. Clone the Repository
 ```bash
-# Clone the repository
 git clone https://github.com/ronnycoding/my-personal-agents.git
-
-# Navigate to the project
 cd my-personal-agents
-
-# Review available agents
-ls .claude/agents/
-
-# Review available skills
-ls .claude/skills/
 ```
+
+### 2. Verify Permissions
+Run the permission verification script to ensure proper access:
+```bash
+./tests/framework/verify_permissions.sh
+```
+
+If permissions are missing, follow the setup guide:
+```bash
+cat docs/PERMISSIONS.md
+```
+
+### 3. Explore the Structure
+```bash
+# Review agent definition
+cat .claude/agents/productivity-agent.md
+
+# Check available skills directories
+ls .claude/skills/
+
+# View test framework
+ls tests/framework/
+```
+
+### 4. Development Status
+Check the [Epic Issue #1](https://github.com/ronnycoding/my-personal-agents/issues/1) for current progress and task breakdown.
 
 ## Usage Examples
 
@@ -102,9 +120,37 @@ Each skill is a tested AppleScript file (`.scpt`) that can be invoked by agents 
 - Error handling: Wrap calendar/reminder loops in `try` blocks
 - Time zones: AppleScript uses system timezone (America/Costa_Rica)
 
+## Project Status
+
+🚧 **Under Active Development**
+
+Track progress on the [Epic Issue](https://github.com/ronnycoding/my-personal-agents/issues/1).
+
+**Completed:**
+- ✅ Repository setup and directory structure (#2)
+- ✅ macOS permissions configuration and verification
+- ✅ Permission documentation and testing framework
+
+**In Progress:**
+- 🔄 Skills API framework (#3)
+- 🔄 AppleScript testing framework (#4)
+
+**Upcoming:**
+- ⏳ Apple Mail skills (#5-#7)
+- ⏳ Calendar skills (#8-#10)
+- ⏳ Reminders skills (#11-#13)
+- ⏳ Meeting skills (#14-#15)
+- ⏳ Agent orchestration (#16)
+- ⏳ Documentation (#17)
+
+## Documentation
+
+- [Permissions Setup Guide](docs/PERMISSIONS.md) - Detailed macOS permission configuration
+- [Agent Definition](.claude/agents/productivity-agent.md) - Productivity agent overview
+
 ## Contributing
 
-This is a personal repository. For issues and feature requests, please use GitHub Issues.
+This is a personal repository. For issues and feature requests, please use [GitHub Issues](https://github.com/ronnycoding/my-personal-agents/issues).
 
 ## License
 

@@ -1,0 +1,50 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Personal Data
+*.mbox
+*.emlx
+personal_emails/
+test_data/personal/
+
+# Test Outputs
+tests/output/
+tests/logs/
+*.test.log
+
+# AppleScript Compiled
+*.scpt.bak
+*.scpt~
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code
+.claude/projects/
+.claude/shell-snapshots/
+.claude/todos/
+.claude/statsig/
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+__pycache__/
+
+# Environment
+.env
+.env.local
+credentials.json
+secrets/
