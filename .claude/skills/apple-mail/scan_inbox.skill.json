@@ -1,0 +1,110 @@
+{
+  "name": "scan_inbox",
+  "domain": "apple-mail",
+  "description": "Scan Apple Mail inbox for unread, actionable, and priority messages within a specified time range",
+  "version": "1.0.0",
+  "author": "Personal Agents",
+  "created": "2025-10-26",
+  "parameters": [
+    {
+      "name": "time_range",
+      "type": "integer",
+      "description": "Hours to look back from current time",
+      "default": 24,
+      "required": false,
+      "validation": {
+        "min": 1,
+        "max": 168
+      }
+    },
+    {
+      "name": "priority_only",
+      "type": "boolean",
+      "description": "Return only priority/flagged messages",
+      "default": false,
+      "required": false
+    }
+  ],
+  "returns": {
+    "type": "object",
+    "description": "Categorized email counts and message details",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Operation success status"
+      },
+      "unreadCount": {
+        "type": "integer",
+        "description": "Total unread messages in time range"
+      },
+      "actionableCount": {
+        "type": "integer",
+        "description": "Messages with actionable keywords"
+      },
+      "priorityCount": {
+        "type": "integer",
+        "description": "Flagged or priority messages"
+      },
+      "unreadList": {
+        "type": "array",
+        "description": "List of unread message details"
+      },
+      "actionableList": {
+        "type": "array",
+        "description": "List of actionable message details"
+      },
+      "priorityList": {
+        "type": "array",
+        "description": "List of priority message details"
+      },
+      "timeRange": {
+        "type": "integer",
+        "description": "Time range used (hours)"
+      },
+      "priorityOnly": {
+        "type": "boolean",
+        "description": "Whether only priority messages were returned"
+      }
+    },
+    "example": {
+      "success": true,
+      "unreadCount": 38,
+      "actionableCount": 2,
+      "priorityCount": 1,
+      "timeRange": 24,
+      "priorityOnly": false
+    }
+  },
+  "error_handling": {
+    "permission_denied": "Check System Settings → Privacy & Security → Automation → Mail",
+    "no_messages": "Returns empty lists with zero counts (not an error)",
+    "timeout": "Reduce time_range parameter or check Mail app responsiveness"
+  },
+  "dependencies": {
+    "apps": ["Mail"],
+    "permissions": ["Mail automation"],
+    "other_skills": [],
+    "external": []
+  },
+  "performance": {
+    "typical_execution_ms": 2000,
+    "max_timeout_ms": 30000,
+    "caching": false
+  },
+  "actionable_keywords": [
+    "deadline",
+    "urgent",
+    "action required",
+    "meeting",
+    "request",
+    "please review",
+    "asap",
+    "todo",
+    "action item"
+  ],
+  "tags": ["email", "inbox", "triage", "actionable"],
+  "related_issues": ["#5"],
+  "documentation_url": "https://github.com/ronnycoding/my-personal-agents/issues/5",
+  "status": "implemented",
+  "tested": true
+}
