@@ -134,14 +134,18 @@ Track progress on the [Epic Issue](https://github.com/ronnycoding/my-personal-ag
 **Completed:**
 - ✅ Skills API framework and documentation (#3)
 - ✅ AppleScript testing & validation framework (#4)
+- ✅ Core productivity skills implemented
+
+**Active Skills:**
+- 🎯 **scan-inbox**: Scan Apple Mail for unread/actionable messages
+- 🎯 **read-calendar**: Read macOS Calendar events
+- 🎯 **list-reminders**: List tasks from Reminders app
+- 🎯 **daily-briefing**: Comprehensive morning briefing (orchestrates all skills)
 
 **Upcoming:**
-- ⏳ Apple Mail skills (#5-#7)
-- ⏳ Calendar skills (#8-#10)
-- ⏳ Reminders skills (#11-#13)
-- ⏳ Meeting skills (#14-#15)
-- ⏳ Agent orchestration (#16)
-- ⏳ Documentation (#17)
+- ⏳ Additional skills (#6-#15)
+- ⏳ Advanced orchestration (#16)
+- ⏳ Complete documentation (#17)
 
 ## Documentation
 
