@@ -131,8 +131,10 @@ Track progress on the [Epic Issue](https://github.com/ronnycoding/my-personal-ag
 - ✅ macOS permissions configuration and verification
 - ✅ Permission documentation and testing framework
 
+**Completed:**
+- ✅ Skills API framework and documentation (#3)
+
 **In Progress:**
-- 🔄 Skills API framework (#3)
 - 🔄 AppleScript testing framework (#4)
 
 **Upcoming:**
@@ -146,7 +148,9 @@ Track progress on the [Epic Issue](https://github.com/ronnycoding/my-personal-ag
 ## Documentation
 
 - [Permissions Setup Guide](docs/PERMISSIONS.md) - Detailed macOS permission configuration
+- [Skills API Guide](docs/SKILLS_API.md) - Creating and using AppleScript skills
 - [Agent Definition](.claude/agents/productivity-agent.md) - Productivity agent overview
+- [Skills Directory](.claude/skills/README.md) - Skills organization and best practices
 
 ## Contributing
 

@@ -1,0 +1,72 @@
+{
+  "name": "skill_name",
+  "domain": "app-domain",
+  "description": "Brief description of what this skill does",
+  "version": "1.0.0",
+  "author": "Your Name",
+  "created": "2025-10-26",
+  "parameters": [
+    {
+      "name": "param1",
+      "type": "string|integer|boolean|array|object",
+      "description": "Description of parameter",
+      "default": "default_value",
+      "required": false,
+      "validation": {
+        "min": 0,
+        "max": 100,
+        "pattern": "regex_pattern"
+      }
+    },
+    {
+      "name": "param2",
+      "type": "boolean",
+      "description": "Description of second parameter",
+      "default": false,
+      "required": false
+    }
+  ],
+  "returns": {
+    "type": "object",
+    "description": "Description of return value",
+    "properties": {
+      "success": {
+        "type": "boolean",
+        "description": "Operation success status"
+      },
+      "data": {
+        "type": "array",
+        "description": "Returned data"
+      },
+      "count": {
+        "type": "integer",
+        "description": "Number of items returned"
+      }
+    },
+    "example": {
+      "success": true,
+      "data": [],
+      "count": 0
+    }
+  },
+  "error_handling": {
+    "permission_denied": "Check System Settings → Privacy & Security → Automation",
+    "invalid_input": "Verify parameter types and ranges",
+    "timeout": "Reduce query scope or time range",
+    "no_data": "Returns empty result (not an error)"
+  },
+  "dependencies": {
+    "apps": ["ApplicationName"],
+    "permissions": ["ApplicationName automation"],
+    "other_skills": [],
+    "external": []
+  },
+  "performance": {
+    "typical_execution_ms": 500,
+    "max_timeout_ms": 30000,
+    "caching": false
+  },
+  "tags": ["tag1", "tag2", "automation"],
+  "related_issues": ["#5", "#16"],
+  "documentation_url": "https://github.com/ronnycoding/my-personal-agents/issues/5"
+}
