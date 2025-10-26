@@ -26,22 +26,17 @@ on listTasks()
 			set listName to name of reminderList
 			set reminderItems to reminders of reminderList
 
-			repeat with reminder in reminderItems
-				if completed of reminder is false then
-					set taskData to {¬
-						taskName:name of reminder, ¬
-						listName:listName, ¬
-						priority:priority of reminder, ¬
-						completed:completed of reminder¬
-					}
+			repeat with aReminder in reminderItems
+				if completed of aReminder is false then
+					set taskData to {taskName:(name of aReminder), listName:listName, taskPriority:(priority of aReminder), isCompleted:(completed of aReminder)}
 
 					try
-						set dueDate to due date of reminder
-						set taskData to taskData & {dueDate:dueDate}
+						set taskDueDate to due date of aReminder
+						set taskData to taskData & {dueDate:taskDueDate}
 
-						if dueDate < today then
+						if taskDueDate < today then
 							set end of overdueTasks to taskData
-						else if dueDate ≥ today and dueDate < (today + (1 * days)) then
+						else if taskDueDate is greater than or equal to today and taskDueDate < (today + (1 * days)) then
 							set end of todayTasks to taskData
 						end if
 					on error
@@ -53,14 +48,6 @@ on listTasks()
 			end repeat
 		end repeat
 
-		return {¬
-			success:true, ¬
-			totalTasks:(count of allTasks), ¬
-			overdueCount:(count of overdueTasks), ¬
-			todayCount:(count of todayTasks), ¬
-			tasks:allTasks, ¬
-			overdue:overdueTasks, ¬
-			today:todayTasks¬
-		}
+		return {success:true, totalTasks:(count of allTasks), overdueCount:(count of overdueTasks), todayCount:(count of todayTasks), tasks:allTasks, overdue:overdueTasks, todayTasks:todayTasks}
 	end tell
 end listTasks

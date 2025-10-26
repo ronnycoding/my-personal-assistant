@@ -16,16 +16,23 @@ Comprehensive morning briefing that combines your schedule, emails, and tasks in
 - "Help me organize my day"
 - "What should I focus on today?"
 
+## Requirements
+
+This skill requires `icalBuddy` for accurate calendar data with recurring events:
+```bash
+brew install ical-buddy
+```
+
 ## Instructions
 
 ### Step 1: Gather Data
 
-Run all three data-gathering skills in sequence:
+Run all three data-gathering commands in parallel:
 
-1. **Check Calendar**:
+1. **Check Calendar** (using icalBuddy for recurring events):
 ```bash
 TODAY=$(date +%Y-%m-%d)
-osascript .claude/skills/read-calendar/scripts/read_events.scpt "$TODAY" "$TODAY"
+icalBuddy -n -iep "title,datetime,location" -df "%Y-%m-%d" -tf "%H:%M" eventsFrom:"$TODAY" to:"$TODAY"
 ```
 
 2. **Check Email**:

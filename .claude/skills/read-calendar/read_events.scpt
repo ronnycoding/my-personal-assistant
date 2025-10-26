@@ -21,21 +21,60 @@ end run
 
 on readEvents(startDate, endDate)
 	tell application "Calendar"
-		set allEvents to events whose (start date ≥ startDate and start date ≤ endDate)
+		set allCalendars to calendars
 		set eventList to {}
 
-		repeat with evt in allEvents
-			set eventData to {¬
-				summary:summary of evt, ¬
-				startDate:start date of evt, ¬
-				endDate:end date of evt, ¬
-				location:location of evt, ¬
-				calendarName:name of calendar of evt¬
-			}
-			set end of eventList to eventData
+		repeat with cal in allCalendars
+			try
+				-- Get regular events in date range
+				set allCalEvents to events of cal
+
+				repeat with evt in allCalEvents
+					set evtStartDate to start date of evt
+					if evtStartDate is greater than or equal to startDate and evtStartDate is less than or equal to endDate then
+						set eventData to {summary:(summary of evt), startDate:evtStartDate, endDate:(end date of evt), location:(location of evt), calendarName:(name of cal), isRecurring:false}
+						set end of eventList to eventData
+					end if
+				end repeat
+
+				-- Also check for recurring events that might apply to this date range
+				-- Get events from slightly before the range to catch recurring patterns
+				set extendedStart to startDate - (90 * days)
+				set recurringCandidates to events of cal
+
+				repeat with evt in recurringCandidates
+					try
+						set evtRecurrence to recurrence of evt
+						if evtRecurrence is not missing value and evtRecurrence is not "" then
+							-- This is a recurring event, check if any instance falls in our range
+							set evtStartDate to start date of evt
+							set evtEndDate to end date of evt
+							set duration to evtEndDate - evtStartDate
+
+							-- Check if the event's recurrence pattern intersects with our date range
+							-- For weekly events, check each week in the range
+							if evtRecurrence contains "FREQ=WEEKLY" then
+								set currentDate to startDate
+								repeat while currentDate is less than or equal to endDate
+									set daysDiff to (currentDate - evtStartDate) / days as integer
+									if daysDiff mod 7 = 0 and daysDiff ≥ 0 then
+										set projectedStart to evtStartDate + (daysDiff * days)
+										if projectedStart ≥ startDate and projectedStart ≤ endDate then
+											set projectedEnd to projectedStart + duration
+											set eventData to {summary:(summary of evt), startDate:projectedStart, endDate:projectedEnd, location:(location of evt), calendarName:(name of cal), isRecurring:true}
+											set end of eventList to eventData
+										end if
+									end if
+									set currentDate to currentDate + (1 * days)
+								end repeat
+							end if
+						end if
+					end try
+				end repeat
+			end try
 		end repeat
 
-		return {success:true, events:eventList, count:(count of eventList)}
+		return {success:true, events:eventList, eventCount:(count of eventList)}
 	end tell
 end readEvents
 
