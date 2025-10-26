@@ -43,6 +43,16 @@ Personal productivity skills for Claude Code using AppleScript automation.
 
 **Usage**: Activated when you ask to plan your day, get a morning briefing, or want an overview.
 
+### tech-news-curator
+**Purpose**: Curate and analyze technical articles from engineering blogs about AI, software engineering, and emerging tech trends
+
+**Files**:
+- `SKILL.md` - Main skill definition with MCP tools integration
+- `reference.md` - Complete MCP tools documentation
+- `examples.md` - Article presentations and workflows
+
+**Usage**: Activated when you ask about tech news, AI updates, engineering blogs, new frameworks, industry trends, or want a daily tech briefing. Uses the engblogs MCP server for RSS feed aggregation.
+
 ## How Skills Work
 
 Skills are automatically discovered and invoked by Claude based on your requests. Each skill:
@@ -101,14 +111,33 @@ osascript .claude/skills/list-reminders/scripts/list_tasks.scpt
 ### Test Skills with Claude
 
 Just ask Claude naturally:
+
+**Productivity Skills:**
 - "Check my email"
 - "What's on my calendar today?"
 - "Show me my to-do list"
 - "Give me my morning briefing"
 
+**Tech News Curator:**
+- "What's new in AI?"
+- "Show me tech news today"
+- "Find articles about GraphQL performance"
+- "Give me my morning tech briefing"
+
 Claude will automatically activate the appropriate skill(s).
 
-## Permissions Required
+## Requirements
+
+### System Dependencies
+
+Install `icalBuddy` for proper recurring event support:
+```bash
+brew install ical-buddy
+```
+
+**Why icalBuddy?** macOS Calendar via AppleScript doesn't pre-generate future instances of recurring events, so weekly/monthly meetings won't appear when querying future dates. icalBuddy properly expands recurring events, ensuring you see all upcoming meetings including recurring ones.
+
+### macOS Permissions
 
 All skills require macOS automation permissions:
 
