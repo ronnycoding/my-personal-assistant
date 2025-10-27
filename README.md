@@ -152,6 +152,7 @@ Track progress on the [Epic Issue](https://github.com/ronnycoding/my-personal-ag
 - [Permissions Setup Guide](docs/PERMISSIONS.md) - Detailed macOS permission configuration
 - [Skills API Guide](docs/SKILLS_API.md) - Creating and using AppleScript skills
 - [Testing Framework](tests/README.md) - AppleScript testing, assertions, and test data
+- [Tech Digest Format](docs/TECH_DIGEST_FORMAT.md) - Standards for presenting tech news with proper attribution
 - [Agent Definition](.claude/agents/productivity-agent.md) - Productivity agent overview
 - [Skills Directory](.claude/skills/README.md) - Skills organization and best practices
 

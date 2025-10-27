@@ -95,7 +95,8 @@ my-personal-agents/
 │       └── test_scan_inbox.scpt (3/4 tests passing)
 ├── docs/
 │   ├── PERMISSIONS.md (200+ lines)
-│   └── SKILLS_API.md (300+ lines - outdated, needs update)
+│   ├── SKILLS_API.md (300+ lines - outdated, needs update)
+│   └── TECH_DIGEST_FORMAT.md (New: Tech news formatting standards) ⭐
 └── README.md
 
 ⭐ = Required SKILL.md with YAML frontmatter (official Claude Code format)
