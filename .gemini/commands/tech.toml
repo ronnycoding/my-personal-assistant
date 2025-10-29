@@ -1,0 +1,2 @@
+prompt = "Show me today's tech news across all categories (AI/ML, backend, frontend, cloud, devtools)."
+description = "Daily tech news digest using engblogs MCP server"

@@ -1,0 +1,2 @@
+prompt = "Show me recent cloud and infrastructure articles (Kubernetes, AWS, serverless, DevOps)."
+description = "Cloud and infrastructure news curation using engblogs MCP server"

@@ -1,0 +1,2 @@
+prompt = "Give me a comprehensive tech digest from the last 7 days, highlighting the most important developments."
+description = "Weekly tech news digest using engblogs MCP server"

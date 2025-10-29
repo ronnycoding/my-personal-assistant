@@ -1,0 +1,64 @@
+prompt = "Show me my calendar events for today and upcoming schedule."
+description = "Read macOS Calendar events using AppleScript or icalBuddy"
+instruction = """# Read Calendar
+
+Retrieves calendar events from macOS Calendar for analysis, planning, and scheduling.
+
+## When to Use
+
+- "What's on my calendar today?"
+- "Show me my schedule for this week"
+- "Do I have any meetings tomorrow?"
+- "What's my next meeting?"
+
+## Requirements
+
+This skill requires `icalBuddy` to properly handle recurring events:
+```bash
+brew install ical-buddy
+```
+
+## Instructions
+
+### Execute Calendar Read
+
+Use icalBuddy to retrieve events including recurring ones:
+
+```bash
+icalBuddy -n -iep "title,datetime,location" -df "%Y-%m-%d" -tf "%H:%M" eventsFrom:<start_date> to:<end_date>
+```
+
+Example for today:
+```bash
+TODAY=$(date +%Y-%m-%d)
+icalBuddy -n -iep "title,datetime,location" -df "%Y-%m-%d" -tf "%H:%M" eventsFrom:"$TODAY" to:"$TODAY"
+```
+
+Example for date range:
+```bash
+icalBuddy -n -iep "title,datetime,location" -df "%Y-%m-%d" -tf "%H:%M" eventsFrom:2025-10-26 to:2025-10-27
+```
+
+**Note:** icalBuddy properly handles recurring events (unlike AppleScript which doesn't pre-generate future instances).
+
+**Alternative (AppleScript):** If icalBuddy is not available, you can use the AppleScript:
+```bash
+osascript .gemini/scripts/read_events.scpt <start_date> <end_date>
+```
+
+Example:
+```bash
+osascript .gemini/scripts/read_events.scpt 2025-10-26 2025-10-27
+```
+
+### Present Results
+
+Format events clearly:
+- Group by day
+- Show time, title, location, calendar name
+- Highlight conflicts if any
+- Identify gaps for focus time
+- Mark recurring events clearly
+
+For examples, see the read-calendar skill documentation.
+"""
