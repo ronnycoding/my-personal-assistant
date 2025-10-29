@@ -64,16 +64,16 @@ The Personal Finance Advisor provides comprehensive financial analysis, projecti
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| `/finance init` | Create new financial notebook |
-| `/finance import` | Import transaction data from CSV/Excel |
-| `/finance analyze` | Analyze financial data and calculate metrics |
-| `/finance project` | Generate projections and forecasts |
-| `/finance advise` | Get AI-driven recommendations |
-| `/finance report` | Create charts and visualizations |
-| `/finance list` | List all notebooks |
-| `/finance delete` | Delete a notebook |
+| Command | Parameters | Description | Example |
+|---------|------------|-------------|---------|
+| `/finance init` | `--notebook="name"` | Create new financial notebook with template structure | `/finance init --notebook="2025-budget"` |
+| `/finance import` | `--source="path"` `--type="account"` | Import transactions from CSV/Excel (checking, savings, credit, cash) | `/finance import --source="transactions.csv" --type="checking"` |
+| `/finance analyze` | `--type="analysis"` `--period="range"` | Analyze finances (overview, income, expenses, cashflow, networth, savings, budget) | `/finance analyze --type=overview --period="last-3-months"` |
+| `/finance project` | `--type="projection"` `--months=N` `--scenario="name"` | Generate forecasts (cashflow, savings, networth, debt, retirement) | `/finance project --type=cashflow --months=12 --scenario="moderate"` |
+| `/finance advise` | `--focus="area"` `--goal="objective"` | Get AI recommendations (overall, budget, savings, debt, spending, goals) | `/finance advise --focus="savings" --goal="Emergency fund"` |
+| `/finance report` | `--type="chart"` `--period="range"` `--format="output"` | Create visualizations (income-expense, categories, networth, cashflow, budget, projections) | `/finance report --type="income-expense" --period="last-12-months"` |
+| `/finance list` | None | List all financial notebooks with metadata | `/finance list` |
+| `/finance delete` | `--notebook="name"` `--confirm` | Delete a notebook (creates backup) | `/finance delete --notebook="old-budget" --confirm` |
 
 ## Requirements
 
@@ -89,17 +89,130 @@ The Personal Finance Advisor provides comprehensive financial analysis, projecti
 - All processing via local jupyter-mcp server
 - Optional encryption for backups
 
-## Data Sources
+## Importing Bank Statements
 
-Import transactions from:
-- Bank account downloads (CSV/Excel)
-- Credit card statements
-- Manual entry via notebook
+### Where to Store Bank Statements
 
-Supported formats:
-- CSV with date, description, amount columns
-- Excel (.xlsx, .xls)
-- Multiple date formats supported
+**Recommended Location:** `~/Documents/Finance/statements/`
+
+```bash
+mkdir -p ~/Documents/Finance/statements
+mkdir -p ~/Documents/Finance/archives
+```
+
+### Method 1: Direct Import (CSV/Excel)
+
+```bash
+# Single file
+/finance import --source="~/Documents/Finance/checking.csv" --type="checking"
+
+# Delete after import for security
+rm ~/Documents/Finance/checking.csv
+```
+
+### Method 2: Consolidate Multiple Files
+
+Use the built-in consolidation tool to combine multiple statements:
+
+```bash
+cd .claude/finance-notebooks
+
+# Combine multiple CSV/Excel files
+python consolidate_statements.py \
+  ~/Documents/Finance/checking-*.csv \
+  -o ~/Documents/Finance/combined-2024.csv
+
+# Import the combined file
+/finance import --source="~/Documents/Finance/combined-2024.csv" --type="checking"
+```
+
+**Features:**
+- ✅ Combines multiple CSV/Excel files
+- ✅ Removes duplicates automatically
+- ✅ Sorts transactions by date
+- ✅ Standardizes column names
+
+### Method 3: Extract from PDF Statements
+
+For PDF bank statements, use the extraction tool:
+
+```bash
+# Install PDF tools (one-time setup)
+pip install pdfplumber pandas
+
+# Extract transactions from PDFs
+cd .claude/finance-notebooks
+python extract_pdf_statements.py \
+  ~/Documents/Finance/*.pdf \
+  -o ~/Documents/Finance/extracted.csv
+
+# Import the extracted data
+/finance import --source="~/Documents/Finance/extracted.csv" --type="checking"
+```
+
+**Features:**
+- ✅ Extracts transaction tables from PDFs
+- ✅ Handles multiple PDFs at once
+- ✅ Auto-detects transaction columns
+- ✅ Removes duplicates
+
+### Import Helper Tools
+
+| Tool | Purpose | Usage |
+|------|---------|-------|
+| `consolidate_statements.py` | Combine multiple CSV/Excel files | `python consolidate_statements.py file1.csv file2.csv -o combined.csv` |
+| `extract_pdf_statements.py` | Extract transactions from PDF statements | `python extract_pdf_statements.py statement.pdf -o transactions.csv` |
+| `IMPORT_GUIDE.md` | Complete import documentation | See `.claude/finance-notebooks/IMPORT_GUIDE.md` |
+
+### Supported Data Formats
+
+**CSV/Excel Requirements:**
+- Required columns: `date`, `description`, `amount`
+- Optional columns: `category`, `account`, `balance`
+
+**Supported Date Formats:**
+- `2025-01-15` (YYYY-MM-DD)
+- `01/15/2025` (MM/DD/YYYY)
+- `15/01/2025` (DD/MM/YYYY)
+- `Jan 15, 2025`
+
+**Account Types:**
+- `checking` - Checking accounts
+- `savings` - Savings accounts
+- `credit` - Credit cards
+- `cash` - Cash transactions
+- `investment` - Investment accounts
+
+### Complete Import Workflow
+
+```bash
+# 1. Download statements from bank to ~/Documents/Finance/
+
+# 2. If PDF, extract first
+python extract_pdf_statements.py ~/Documents/Finance/*.pdf -o ~/Documents/Finance/all.csv
+
+# 3. Create notebook and import
+/finance init --notebook="2025-budget"
+/finance import --source="~/Documents/Finance/all.csv" --type="checking"
+
+# 4. Delete source files (data now in gitignored notebook)
+rm ~/Documents/Finance/all.csv
+
+# 5. Analyze
+/finance analyze --type=overview
+```
+
+### Security Best Practices
+
+🔒 **Always delete source files after import:**
+- Imported data is stored in gitignored notebooks
+- Source CSV/Excel/PDF files should be deleted
+- Or move to encrypted archive location
+
+🔒 **Never commit financial data to git:**
+- `.gitignore` already configured for `.ipynb`, `.csv`, `.xlsx`, `.pdf`
+- All notebooks in `.claude/finance-notebooks/` are gitignored
+- Run `git status` to verify no financial files are staged
 
 ## Architecture
 
