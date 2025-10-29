@@ -45,6 +45,8 @@ The Personal Finance Advisor provides comprehensive financial analysis, projecti
 
 ## Quick Start
 
+### Option 1: CSV/Excel Files
+
 ```bash
 # 1. Create notebook
 /finance init --notebook="2025-budget"
@@ -60,6 +62,22 @@ The Personal Finance Advisor provides comprehensive financial analysis, projecti
 
 # 5. Create visualizations
 /finance report --type="income-expense"
+```
+
+### Option 2: PDF Bank Statements
+
+```bash
+# 1. Extract transactions from PDFs
+cd .claude/finance-notebooks
+python extract_pdf_statements.py ~/Documents/Finance/*.pdf -o ~/Documents/Finance/2024.csv
+
+# 2. Create notebook and import
+/finance init --notebook="2024-budget"
+/finance import --source="~/Documents/Finance/2024.csv" --type="checking"
+
+# 3. Analyze and get insights
+/finance analyze --type=overview
+/finance advise --focus="savings"
 ```
 
 ## Commands
@@ -256,18 +274,36 @@ Monitor assets and liabilities over time, visualize growth trends.
 
 ## Example Workflows
 
-### Monthly Review
+### Monthly Review (CSV)
 ```bash
-/finance import --source="jan2025.csv"
+/finance import --source="jan2025.csv" --type="checking"
 /finance analyze --type=overview --period="this-month"
 /finance report --type="categories"
 /finance advise --focus="budget"
 ```
 
-### Annual Planning
+### Monthly Review (PDF)
 ```bash
+# Extract from PDF first
+cd .claude/finance-notebooks
+python extract_pdf_statements.py ~/Downloads/statement-jan.pdf -o ~/Documents/Finance/jan2025.csv
+
+# Then import and analyze
+/finance import --source="~/Documents/Finance/jan2025.csv" --type="checking"
+/finance analyze --type=overview --period="this-month"
+/finance report --type="categories"
+/finance advise --focus="budget"
+```
+
+### Annual Planning (Multiple PDFs)
+```bash
+# Extract all PDFs for the year
+cd .claude/finance-notebooks
+python extract_pdf_statements.py ~/Documents/Finance/2024/*.pdf -o ~/Documents/Finance/2024-all.csv
+
+# Create notebook and analyze
 /finance init --notebook="2025-plan"
-/finance import --source="2024-all.csv"
+/finance import --source="~/Documents/Finance/2024-all.csv" --type="checking"
 /finance analyze --type=overview --period="2024"
 /finance project --type=cashflow --months=12
 /finance advise --focus="goals"
