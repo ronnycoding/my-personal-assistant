@@ -1,6 +1,6 @@
-# My Personal Agents
+# My Personal Assistant
 
-Personal AI agents collection supporting **Claude Code** and **Gemini CLI** - productivity automation, AppleScript skills, and custom workflows for macOS.
+Personal AI assistant supporting **Claude Code** and **Gemini CLI** - productivity automation, AppleScript skills, and custom workflows for macOS.
 
 ## Overview
 
@@ -33,7 +33,7 @@ AI-powered financial management using Jupyter notebooks for analysis, projection
 ## Repository Structure
 
 ```
-my-agents/
+my-personal-assistant/
 ├── .claude/              # Claude Code configuration
 │   ├── commands/         # Slash commands for quick access
 │   ├── agents/           # Specialized agent submodules
@@ -137,8 +137,8 @@ icalBuddy provides better recurring event handling than AppleScript.
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/ronnycoding/my-personal-agents.git
-cd my-personal-agents
+git clone https://github.com/ronnycoding/my-personal-assistant.git
+cd my-personal-assistant
 ```
 
 ### 2. Verify Permissions
@@ -185,7 +185,7 @@ ls tests/framework/
 ```
 
 ### 4. Development Status
-Check the [Epic Issue #1](https://github.com/ronnycoding/my-personal-agents/issues/1) for current progress and task breakdown.
+Check the [Epic Issue #1](https://github.com/ronnycoding/my-personal-assistant/issues/1) for current progress and task breakdown.
 
 ## Usage Examples
 
@@ -344,7 +344,7 @@ Track progress on the [Epic Issue](https://github.com/ronnycoding/my-personal-ag
 
 ## Contributing
 
-This is a personal repository. For issues and feature requests, please use [GitHub Issues](https://github.com/ronnycoding/my-personal-agents/issues).
+This is a personal repository. For issues and feature requests, please use [GitHub Issues](https://github.com/ronnycoding/my-personal-assistant/issues).
 
 ## License
 

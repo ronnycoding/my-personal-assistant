@@ -32,7 +32,7 @@ end testBasicExecution
 -- Test 2: Priority only mode
 on testPriorityMode()
 	try
-		set skillResult to run script POSIX file "/Users/ronnycoding/projects/my-agents/.claude/skills/apple-mail/scan_inbox.scpt" with parameters {24, true}
+		set skillResult to run script POSIX file "/Users/ronnycoding/projects/my-personal-assistant/.claude/skills/apple-mail/scan_inbox.scpt" with parameters {24, true}
 
 		if success of skillResult is true and priorityOnly of skillResult is true then
 			recordPass("Priority only mode")
@@ -47,7 +47,7 @@ end testPriorityMode
 -- Test 3: Different time ranges
 on testTimeRanges()
 	try
-		set skillResult to run script POSIX file "/Users/ronnycoding/projects/my-agents/.claude/skills/apple-mail/scan_inbox.scpt" with parameters {48, false}
+		set skillResult to run script POSIX file "/Users/ronnycoding/projects/my-personal-assistant/.claude/skills/apple-mail/scan_inbox.scpt" with parameters {48, false}
 
 		if success of skillResult is true and timeRange of skillResult is 48 then
 			recordPass("Time range parameter")
@@ -62,7 +62,7 @@ end testTimeRanges
 -- Test 4: Result structure validation
 on testResultStructure()
 	try
-		set skillResult to run script POSIX file "/Users/ronnycoding/projects/my-agents/.claude/skills/apple-mail/scan_inbox.scpt" with parameters {24, false}
+		set skillResult to run script POSIX file "/Users/ronnycoding/projects/my-personal-assistant/.claude/skills/apple-mail/scan_inbox.scpt" with parameters {24, false}
 
 		set hasAllFields to true
 

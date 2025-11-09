@@ -26,7 +26,7 @@ mkdir -p ~/Documents/Finance/archives
 Use the consolidation tool:
 
 ```bash
-cd /Users/ronnycoding/projects/my-agents/.claude/finance-notebooks
+cd /Users/ronnycoding/projects/my-personal-assistant/.claude/finance-notebooks
 
 python consolidate_statements.py \
   ~/Documents/Finance/statements/checking-*.csv \
@@ -65,7 +65,7 @@ pip install pdfplumber pandas
 ### Extract from Single PDF
 
 ```bash
-cd /Users/ronnycoding/projects/my-agents/.claude/finance-notebooks
+cd /Users/ronnycoding/projects/my-personal-assistant/.claude/finance-notebooks
 
 python extract_pdf_statements.py \
   ~/Documents/Finance/statements/statement-jan.pdf \
@@ -112,7 +112,7 @@ mkdir -p ~/Documents/Finance/2024/{checking,savings,credit}
 #    (Usually there's a "Download all" option for the year)
 
 # 3. If PDFs, convert them
-cd /Users/ronnycoding/projects/my-agents/.claude/finance-notebooks
+cd /Users/ronnycoding/projects/my-personal-assistant/.claude/finance-notebooks
 
 python extract_pdf_statements.py \
   ~/Documents/Finance/2024/checking/*.pdf \
@@ -238,7 +238,7 @@ open ~/Documents/Finance.dmg
 
 The `.gitignore` is already configured, but verify:
 ```bash
-cd /Users/ronnycoding/projects/my-agents
+cd /Users/ronnycoding/projects/my-personal-assistant
 git status
 
 # Should NOT show any .csv, .xlsx, or .pdf files
