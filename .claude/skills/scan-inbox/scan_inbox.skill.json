@@ -104,7 +104,7 @@
   ],
   "tags": ["email", "inbox", "triage", "actionable"],
   "related_issues": ["#5"],
-  "documentation_url": "https://github.com/ronnycoding/my-personal-agents/issues/5",
+  "documentation_url": "https://github.com/ronnycoding/my-personal-assistant/issues/5",
   "status": "implemented",
   "tested": true
 }

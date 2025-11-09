@@ -1,6 +1,6 @@
-# My Personal Agents - Project Summary
+# My Personal Assistant - Project Summary
 
-**Repository**: [my-personal-agents](https://github.com/ronnycoding/my-personal-agents)
+**Repository**: [my-personal-assistant](https://github.com/ronnycoding/my-personal-assistant)
 **Status**: ✅ Core Infrastructure Complete, Skills Active
 **Date**: October 26, 2025
 
@@ -62,7 +62,7 @@ Build a personal productivity assistant using Claude Code that automates daily t
 ## 📂 Repository Structure
 
 ```
-my-personal-agents/
+my-personal-assistant/
 ├── .claude/
 │   ├── agents/
 │   │   └── productivity-agent.md
@@ -239,8 +239,8 @@ Supporting files provide examples and technical details.
 
 - [Claude Code Skills Docs](https://docs.claude.com/en/docs/claude-code/skills)
 - [AppleScript Language Guide](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/)
-- [Repository](https://github.com/ronnycoding/my-personal-agents)
-- [Issues](https://github.com/ronnycoding/my-personal-agents/issues)
+- [Repository](https://github.com/ronnycoding/my-personal-assistant)
+- [Issues](https://github.com/ronnycoding/my-personal-assistant/issues)
 
 ---
 

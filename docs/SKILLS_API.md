@@ -539,4 +539,4 @@ ls -la .claude/skills/{domain}/{skill}.scpt
 - [Mail Scripting Dictionary](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/MailScriptingRef/)
 - [Calendar Scripting Dictionary](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/CalendarScriptingRef/)
 - [Reminders Scripting Dictionary](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/RemindersScriptingRef/)
-- [Issue Tracker](https://github.com/ronnycoding/my-personal-agents/issues)
+- [Issue Tracker](https://github.com/ronnycoding/my-personal-assistant/issues)

@@ -6,8 +6,8 @@ Multi-app workflow skills for meeting scheduling combining Calendar and Mail aut
 
 | Skill | Status | Issue | Description |
 |-------|--------|-------|-------------|
-| `find_slots` | 📋 Planned | [#14](https://github.com/ronnycoding/my-personal-agents/issues/14) | Find available time slots |
-| `book_meeting` | 📋 Planned | [#15](https://github.com/ronnycoding/my-personal-agents/issues/15) | Create calendar event with attendees |
+| `find_slots` | 📋 Planned | [#14](https://github.com/ronnycoding/my-personal-assistant/issues/14) | Find available time slots |
+| `book_meeting` | 📋 Planned | [#15](https://github.com/ronnycoding/my-personal-assistant/issues/15) | Create calendar event with attendees |
 
 ## Permissions Required
 

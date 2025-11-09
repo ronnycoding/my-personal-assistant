@@ -248,10 +248,10 @@ This is a personal productivity agent. To add new skills:
 
 ## Links
 
-- [Repository](https://github.com/ronnycoding/my-personal-agents)
-- [Issue Tracker](https://github.com/ronnycoding/my-personal-agents/issues)
+- [Repository](https://github.com/ronnycoding/my-personal-assistant)
+- [Issue Tracker](https://github.com/ronnycoding/my-personal-assistant/issues)
 - [Permissions Guide](../../docs/PERMISSIONS.md)
-- [Epic Issue #1](https://github.com/ronnycoding/my-personal-agents/issues/1)
+- [Epic Issue #1](https://github.com/ronnycoding/my-personal-assistant/issues/1)
 
 ## License
 Private - Personal Use Only

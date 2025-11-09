@@ -6,9 +6,9 @@ AppleScript skills for macOS Reminders automation including task management and 
 
 | Skill | Status | Issue | Description |
 |-------|--------|-------|-------------|
-| `list_tasks` | 📋 Planned | [#11](https://github.com/ronnycoding/my-personal-agents/issues/11) | Read and organize tasks |
-| `manage_tasks` | 📋 Planned | [#12](https://github.com/ronnycoding/my-personal-agents/issues/12) | Create, update, complete reminders |
-| `cross_reference` | 📋 Planned | [#13](https://github.com/ronnycoding/my-personal-agents/issues/13) | Link tasks with calendar events |
+| `list_tasks` | 📋 Planned | [#11](https://github.com/ronnycoding/my-personal-assistant/issues/11) | Read and organize tasks |
+| `manage_tasks` | 📋 Planned | [#12](https://github.com/ronnycoding/my-personal-assistant/issues/12) | Create, update, complete reminders |
+| `cross_reference` | 📋 Planned | [#13](https://github.com/ronnycoding/my-personal-assistant/issues/13) | Link tasks with calendar events |
 
 ## Permissions Required
 

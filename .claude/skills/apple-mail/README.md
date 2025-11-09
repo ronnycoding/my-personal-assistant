@@ -6,9 +6,9 @@ AppleScript skills for automating Apple Mail operations including inbox scanning
 
 | Skill | Status | Issue | Description |
 |-------|--------|-------|-------------|
-| `scan_inbox` | 📋 Planned | [#5](https://github.com/ronnycoding/my-personal-agents/issues/5) | Scan inbox for unread and actionable messages |
-| `extract_content` | 📋 Planned | [#6](https://github.com/ronnycoding/my-personal-agents/issues/6) | Parse tasks, dates, meetings from emails |
-| `organize_mail` | 📋 Planned | [#7](https://github.com/ronnycoding/my-personal-agents/issues/7) | Flag, archive, draft replies |
+| `scan_inbox` | 📋 Planned | [#5](https://github.com/ronnycoding/my-personal-assistant/issues/5) | Scan inbox for unread and actionable messages |
+| `extract_content` | 📋 Planned | [#6](https://github.com/ronnycoding/my-personal-assistant/issues/6) | Parse tasks, dates, meetings from emails |
+| `organize_mail` | 📋 Planned | [#7](https://github.com/ronnycoding/my-personal-assistant/issues/7) | Flag, archive, draft replies |
 
 ## Skill Specifications
 

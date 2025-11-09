@@ -183,4 +183,4 @@ osascript .claude/skills/SKILL-NAME/scripts/script.scpt [args]
 
 - [Skills Documentation](https://docs.claude.com/en/docs/claude-code/skills)
 - [AppleScript Language Guide](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/)
-- [Project Issues](https://github.com/ronnycoding/my-personal-agents/issues)
+- [Project Issues](https://github.com/ronnycoding/my-personal-assistant/issues)
