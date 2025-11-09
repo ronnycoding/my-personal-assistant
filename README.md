@@ -36,6 +36,19 @@ AI-powered financial management using Jupyter notebooks for analysis, projection
 my-personal-assistant/
 ├── .claude/              # Claude Code configuration
 │   ├── commands/         # Slash commands for quick access
+│   │   ├── morning.md    # Daily briefing (calendar + email + tasks)
+│   │   ├── inbox.md      # Intelligent email scanning
+│   │   ├── calendar.md   # Calendar events viewer
+│   │   ├── tasks.md      # Reminders/tasks organizer
+│   │   ├── finance.md    # Personal finance management
+│   │   ├── tech.md       # Tech news across categories
+│   │   ├── ai.md         # AI/ML news
+│   │   ├── backend.md    # Backend engineering news
+│   │   ├── frontend.md   # Frontend development news
+│   │   ├── cloud.md      # Cloud/infrastructure news
+│   │   ├── tech-briefing.md # Morning tech digest
+│   │   ├── weekly.md     # Weekly tech digest
+│   │   └── search.md     # Search technical articles
 │   ├── agents/           # Specialized agent submodules
 │   ├── skills/           # AppleScript automations (skill structure)
 │   │   ├── scan-inbox/   # Apple Mail inbox scanning
@@ -107,6 +120,50 @@ Both Claude Code and Gemini provide the same productivity features:
 | Morning Briefing | `daily-briefing` | `morning.toml` | Orchestrated daily planning |
 | Tech News | `tech-news-curator` | `tech.toml`, `ai.toml`, etc. | Engineering blog curation |
 | Personal Finance | `/finance` command | N/A | Financial analysis & budgeting via Jupyter |
+
+## Claude Code Slash Commands
+
+Slash commands provide quick access to common workflows. Type `/` in Claude Code to see all available commands.
+
+**How to Use:**
+- Simply type the command in Claude Code chat (e.g., `/morning`)
+- Commands automatically execute their workflow
+- Some commands accept parameters (e.g., `/finance init --notebook="name"`)
+- Tab completion available - type `/` to see suggestions
+
+### Productivity Commands
+
+| Command | Description | Example Usage |
+|---------|-------------|---------------|
+| `/morning` | Complete morning briefing with calendar, email, and tasks | `/morning` |
+| `/inbox` | Intelligent email scanning with job opportunity detection | `/inbox` |
+| `/calendar` | Show today's calendar events and upcoming schedule | `/calendar` |
+| `/tasks` | List tasks and reminders organized by priority | `/tasks` |
+
+### Finance Commands
+
+| Command | Description | Example Usage |
+|---------|-------------|---------------|
+| `/finance init` | Create new financial analysis notebook | `/finance init --notebook="2025-budget"` |
+| `/finance import` | Import transaction data from CSV/Excel | `/finance import --source="file.csv"` |
+| `/finance analyze` | Analyze financial data and calculate metrics | `/finance analyze --type="overview"` |
+| `/finance project` | Generate financial projections and forecasts | `/finance project --months=12` |
+| `/finance advise` | Get AI-driven financial recommendations | `/finance advise --focus="savings"` |
+| `/finance report` | Create visualizations and reports | `/finance report --type="income-expense"` |
+| `/finance list` | List all existing financial notebooks | `/finance list` |
+
+### Tech News Commands
+
+| Command | Description | Example Usage |
+|---------|-------------|---------------|
+| `/tech` | Tech news across all categories (AI, backend, frontend, cloud) | `/tech` |
+| `/ai` | Latest AI and machine learning developments | `/ai` |
+| `/backend` | Backend engineering articles (databases, APIs, distributed systems) | `/backend` |
+| `/frontend` | Frontend development articles (React, Vue, performance) | `/frontend` |
+| `/cloud` | Cloud and infrastructure articles (Kubernetes, AWS, DevOps) | `/cloud` |
+| `/tech-briefing` | Comprehensive morning tech briefing by category | `/tech-briefing` |
+| `/weekly` | Weekly tech digest from the last 7 days | `/weekly` |
+| `/search` | Search for technical articles about specific topics | `/search "GraphQL performance"` |
 
 ## Setup Requirements
 
@@ -184,21 +241,42 @@ cat .gemini/README.md
 ls tests/framework/
 ```
 
-### 4. Development Status
-Check the [Epic Issue #1](https://github.com/ronnycoding/my-personal-assistant/issues/1) for current progress and task breakdown.
 
 ## Usage Examples
 
 ### Claude Code
 
-**Using Skills:**
+**Using Slash Commands:**
+```bash
+# Morning productivity workflow
+/morning                    # Complete daily briefing
+
+# Individual productivity commands
+/inbox                      # Scan email for urgent items
+/calendar                   # Today's schedule
+/tasks                      # Task list by priority
+
+# Finance management
+/finance init --notebook="2025-budget"
+/finance import --source="~/Documents/checking.csv"
+/finance analyze --type="overview"
+/finance advise --focus="savings"
+
+# Tech news
+/tech                       # All tech categories
+/ai                         # AI/ML developments
+/backend                    # Backend engineering
+/search "GraphQL performance"
+```
+
+**Using Skills (Natural Language):**
 ```
 "Use the daily-briefing skill to plan my day"
 "Check my inbox using scan-inbox for urgent items"
 "Show me my calendar for today using read-calendar"
 ```
 
-**Natural Language:**
+**Natural Language Queries:**
 ```
 "Review my schedule for today and create a prioritized task list
 based on calendar events, emails from the last 24hrs, and existing reminders"
@@ -206,6 +284,8 @@ based on calendar events, emails from the last 24hrs, and existing reminders"
 "Check my unread email and create reminders for anything actionable"
 
 "Find me 2 hours of focus time this week for deep work"
+
+"Analyze my spending patterns from last month and suggest budget improvements"
 ```
 
 ### Gemini CLI
@@ -280,30 +360,18 @@ Each capability uses the same AppleScript implementation, just invoked different
 
 ## Project Status
 
-🚧 **Under Active Development**
-
-Track progress on the [Epic Issue](https://github.com/ronnycoding/my-personal-assistant/issues/1).
-
-**Completed:**
-- ✅ Repository setup and directory structure (#2)
+**Current Features:**
+- ✅ Repository setup and directory structure
 - ✅ macOS permissions configuration and verification
 - ✅ Permission documentation and testing framework
+- ✅ Skills API framework and documentation
+- ✅ AppleScript testing & validation framework
+- ✅ Core productivity skills (scan-inbox, read-calendar, list-reminders, daily-briefing)
+- ✅ Tech news curation via MCP server
+- ✅ Personal finance advisor with Jupyter notebooks
 
-**Completed:**
-- ✅ Skills API framework and documentation (#3)
-- ✅ AppleScript testing & validation framework (#4)
-- ✅ Core productivity skills implemented
-
-**Active Skills:**
-- 🎯 **scan-inbox**: Scan Apple Mail for unread/actionable messages
-- 🎯 **read-calendar**: Read macOS Calendar events
-- 🎯 **list-reminders**: List tasks from Reminders app
-- 🎯 **daily-briefing**: Comprehensive morning briefing (orchestrates all skills)
-
-**Upcoming:**
-- ⏳ Additional skills (#6-#15)
-- ⏳ Advanced orchestration (#16)
-- ⏳ Complete documentation (#17)
+**Planned Features:**
+See [GitHub Issues](https://github.com/ronnycoding/my-personal-assistant/issues) for planned features and enhancements.
 
 ## Documentation
 
