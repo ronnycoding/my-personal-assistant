@@ -68,7 +68,7 @@ For advanced Mail features (like accessing Mail database directly), you may need
 Run the permission verification script to confirm all permissions are set correctly:
 
 ```bash
-cd /Users/ronnycoding/projects/my-agents
+cd /Users/ronnycoding/projects/my-personal-assistant
 ./tests/framework/verify_permissions.sh
 ```
 

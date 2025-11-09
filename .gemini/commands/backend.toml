@@ -1,0 +1,2 @@
+prompt = "Show me recent backend engineering articles (databases, APIs, microservices, distributed systems)."
+description = "Backend engineering news curation using engblogs MCP server"

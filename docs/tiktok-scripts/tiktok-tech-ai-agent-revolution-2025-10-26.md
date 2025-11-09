@@ -406,7 +406,7 @@ Hook (5s) → "Three platforms standardized agents" (10s) → Biggest impact poi
 ## 📁 File Information
 
 **Filename**: `tiktok-tech-ai-agent-revolution-2025-10-26.md`
-**Location**: `/Users/ronnycoding/projects/my-agents/docs/tiktok-scripts/`
+**Location**: `/Users/ronnycoding/projects/my-personal-assistant/docs/tiktok-scripts/`
 **Created**: October 26, 2025
 **Format**: Markdown with YAML frontmatter
 **Word Count**: ~1,500 words (English script)

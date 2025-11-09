@@ -111,7 +111,7 @@ If the script fails:
 
 **Claude Response**:
 \`\`\`bash
-osascript .claude/skills/scan-inbox/scan_inbox.scpt 24 false
+osascript .claude/skills/scan-inbox/scripts/scan_inbox.scpt 24 false
 \`\`\`
 
 Then format and present the results to the user.

@@ -1,0 +1,18 @@
+# Ignore all financial notebooks (sensitive data)
+*.ipynb
+
+# Ignore transaction data files
+*.csv
+*.xlsx
+*.xls
+*.json
+
+# Ignore reports (may contain sensitive data)
+reports/*.png
+reports/*.pdf
+reports/*.html
+
+# Keep the directory structure
+!.gitignore
+!README.md
+!finance_utils.py

@@ -1,0 +1,2 @@
+prompt = "Show me recent frontend development articles (React, Vue, performance, UX, build tools)."
+description = "Frontend development news curation using engblogs MCP server"

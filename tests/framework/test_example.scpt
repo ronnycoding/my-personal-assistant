@@ -3,7 +3,7 @@
 -- Shows how to use assertions, test data, and cleanup
 
 -- Load testing framework using POSIX paths
-set testDir to "/Users/ronnycoding/projects/my-agents/tests/framework"
+set testDir to "/Users/ronnycoding/projects/my-personal-assistant/tests/framework"
 set assertionsPath to POSIX file (testDir & "/assertions.scpt")
 set generatorPath to POSIX file (testDir & "/test_data_generator.scpt")
 

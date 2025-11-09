@@ -1,0 +1,2 @@
+prompt = "Search for technical articles about: $1"
+description = "Search engineering blogs using engblogs MCP server"
