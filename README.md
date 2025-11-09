@@ -282,7 +282,7 @@ Each capability uses the same AppleScript implementation, just invoked different
 
 🚧 **Under Active Development**
 
-Track progress on the [Epic Issue](https://github.com/ronnycoding/my-personal-agents/issues/1).
+Track progress on the [Epic Issue](https://github.com/ronnycoding/my-personal-assistant/issues/1).
 
 **Completed:**
 - ✅ Repository setup and directory structure (#2)

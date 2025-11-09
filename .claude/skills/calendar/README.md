@@ -6,9 +6,9 @@ AppleScript skills for macOS Calendar automation including event reading, confli
 
 | Skill | Status | Issue | Description |
 |-------|--------|-------|-------------|
-| `read_events` | 📋 Planned | [#8](https://github.com/ronnycoding/my-personal-agents/issues/8) | Read calendar events and availability |
-| `detect_conflicts` | 📋 Planned | [#9](https://github.com/ronnycoding/my-personal-agents/issues/9) | Detect scheduling conflicts and find gaps |
-| `suggest_times` | 📋 Planned | [#10](https://github.com/ronnycoding/my-personal-agents/issues/10) | Suggest optimal meeting times |
+| `read_events` | 📋 Planned | [#8](https://github.com/ronnycoding/my-personal-assistant/issues/8) | Read calendar events and availability |
+| `detect_conflicts` | 📋 Planned | [#9](https://github.com/ronnycoding/my-personal-assistant/issues/9) | Detect scheduling conflicts and find gaps |
+| `suggest_times` | 📋 Planned | [#10](https://github.com/ronnycoding/my-personal-assistant/issues/10) | Suggest optimal meeting times |
 
 ## Permissions Required
 

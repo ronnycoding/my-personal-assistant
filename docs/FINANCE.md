@@ -328,8 +328,8 @@ python extract_pdf_statements.py ~/Documents/Finance/2024/*.pdf -o ~/Documents/F
 
 ## Support
 
-- **Issues**: https://github.com/ronnycoding/my-personal-agents/issues
-- **Discussions**: https://github.com/ronnycoding/my-personal-agents/discussions
+- **Issues**: https://github.com/ronnycoding/my-personal-assistant/issues
+- **Discussions**: https://github.com/ronnycoding/my-personal-assistant/discussions
 
 ## Development
 
@@ -345,7 +345,7 @@ This feature is implemented across multiple components:
 - **Issue #43**: Testing suite
 - **Issue #44**: Documentation
 
-See [Epic #35](https://github.com/ronnycoding/my-personal-agents/issues/35) for full implementation details.
+See [Epic #35](https://github.com/ronnycoding/my-personal-assistant/issues/35) for full implementation details.
 
 ## License
 

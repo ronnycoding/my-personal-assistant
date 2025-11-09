@@ -296,4 +296,4 @@ Other report types:
 
 - Review [Troubleshooting Guide](TROUBLESHOOTING.md)
 - Check the [API Reference](API_REFERENCE.md) for developers
-- File issues at: https://github.com/ronnycoding/my-personal-agents/issues
+- File issues at: https://github.com/ronnycoding/my-personal-assistant/issues
