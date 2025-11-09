@@ -19,7 +19,7 @@ osascript .claude/skills/scan-inbox/scripts/scan_inbox.scpt 24 false
 - 0 priority/flagged
 
 📧 Recent Unread:
-1. Google - Security alert for ronnyangelo.freites@gmail.com
+1. Google - Security alert for your account
 2. C# Digest - CD#580 You don't need a repository in EF Core
 3. React Digest - RD#529 React Server Components
 4. Programming Digest - PD#649 What happens when you press send to ChatGPT
